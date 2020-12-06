@@ -6,12 +6,10 @@ const orderTwo = "Donec orci lectus aliquam est magnis"
 
 const calculateEngravingPrice = function (message, pricePerWord) {
   const splitedText = message.split(" ")
-  // console.log(splitedText)
-  console.log(splitedText.length)
-  return console.log(`За гравировку нужно заплатить ${splitedText.length * pricePerWord} кредитов`)
+  return splitedText.length * pricePerWord
 }
 
-calculateEngravingPrice(orderOne, 10)
-calculateEngravingPrice(orderOne, 20)
-calculateEngravingPrice(orderTwo, 40)
-calculateEngravingPrice(orderTwo, 20)
+console.log(calculateEngravingPrice(orderOne, 10))
+console.log(calculateEngravingPrice(orderOne, 20))
+console.log(calculateEngravingPrice(orderTwo, 40))
+console.log(calculateEngravingPrice(orderTwo, 20))

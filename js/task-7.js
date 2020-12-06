@@ -1,40 +1,29 @@
 "use strict"
 
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"]
-let array = []
-let validOrNot
-let loginUnigue
-let result
-
-let input = prompt(`Log in`)
 
 const isLoginValid = function (login) {
-  console.log(input)
-  validOrNot = input.length >= 4 && input.length <= 16 ? "true" : "false"
-  console.log(validOrNot)
+  return login.length >= 4 && login.length <= 16 ? false : true
 }
 
 const isLoginUnique = function (allLogins, login) {
-  loginUnigue = allLogins.includes(input) ? "false" : "true"
-  console.log(loginUnigue)
+  return allLogins.includes(login) ? true : false
 }
 
 const addLogin = function (allLogins, login) {
-  isLoginValid()
-  if (validOrNot === "false") {
-    console.log("Ошибка! Логин должен быть от 4 до 16 символов")
+  if (isLoginValid(login)) {
+    return "Ошибка! Логин должен быть от 4 до 16 символов"
   }
-  if (validOrNot === "true") {
-    isLoginUnique(logins)
-    if (loginUnigue === "false") {
-      console.log("Такой логин уже используется!")
-    }
-    if (loginUnigue === "true") {
-      allLogins.push(input)
-      console.log("Логин успешно добавлен!")
-      console.log(allLogins)
-    }
+  if (isLoginUnique(allLogins, login)) {
+    return "Такой логин уже используется!"
   }
+
+  allLogins.push(login)
+  // console.log(allLogins)
+  return "Логин успешно добавлен!"
 }
 
-addLogin(logins)
+console.log(addLogin(logins, "Ajax"))
+console.log(addLogin(logins, "robotGoogles"))
+console.log(addLogin(logins, "Zod"))
+console.log(addLogin(logins, "jqueryisextremelyfast"))

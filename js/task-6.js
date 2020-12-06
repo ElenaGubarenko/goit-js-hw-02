@@ -22,7 +22,7 @@ const sum = function (sumNumbers) {
   for (let i = 0; i < numbers.length; i += 1) {
     total = total + parseInt(numbers[i])
   }
-  return console.log(`Сумма числе равна ${total}`)
+  return total
 }
 
-sum()
+console.log(`Сумма числе равна ${sum()}`)

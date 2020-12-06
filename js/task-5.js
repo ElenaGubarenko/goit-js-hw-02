@@ -8,16 +8,16 @@ const spam = "spam"
 const sale = "sale"
 
 const checkForSpam = function (message) {
+  let result
   const lowerMessage = message.toLowerCase()
-  console.log(lowerMessage)
   if (lowerMessage.includes(sale) || lowerMessage.includes(spam)) {
-    console.log(true)
+    return true
   } else {
-    console.log(false)
+    return false
   }
 }
 
-checkForSpam(messageOne)
-checkForSpam(messageTwo)
-checkForSpam(messageThree)
-checkForSpam(messageFour)
+console.log(checkForSpam(messageOne))
+console.log(checkForSpam(messageTwo))
+console.log(checkForSpam(messageThree))
+console.log(checkForSpam(messageFour))

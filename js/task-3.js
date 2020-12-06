@@ -7,7 +7,6 @@ const exampleThree = "May the force be with you"
 const findLongestWord = function (string) {
   const exampleArray = string.split(" ")
   let maxWord = exampleArray[0]
-  console.log(exampleArray)
 
   for (let i = 1; i < exampleArray.length; i += 1) {
     if (exampleArray[i].length > maxWord.length) {
@@ -15,9 +14,9 @@ const findLongestWord = function (string) {
     }
   }
 
-  return console.log(`Самое длинное слово: ${maxWord}.`)
+  return maxWord
 }
 
-findLongestWord(exampleOne)
-findLongestWord(exampleTwo)
-findLongestWord(exampleThree)
+console.log(findLongestWord(exampleOne))
+console.log(findLongestWord(exampleTwo))
+console.log(findLongestWord(exampleThree))
