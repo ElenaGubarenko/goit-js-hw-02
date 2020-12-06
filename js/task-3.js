@@ -1,25 +1,23 @@
 "use strict"
 
 const exampleOne = "The quick brown fox jumped over the lazy dog"
-let result
-let numberOfLetters
+const exampleTwo = "Google do a roll"
+const exampleThree = "May the force be with you"
 
 const findLongestWord = function (string) {
   const exampleArray = string.split(" ")
+  let maxWord = exampleArray[0]
   console.log(exampleArray)
-  let newArray = []
-  for (let i = 0; i < exampleArray.length; i += 1) {
-    numberOfLetters = exampleArray[i].length
-    console.log(numberOfLetters)
-    newArray.push(numberOfLetters)
-    console.log(newArray)
-    Number(newArray)
+
+  for (let i = 1; i < exampleArray.length; i += 1) {
+    if (exampleArray[i].length > maxWord.length) {
+      maxWord = exampleArray[i]
+    }
   }
-  console.log(Math.max(newArray))
+
+  return console.log(`Самое длинное слово: ${maxWord}.`)
 }
 
 findLongestWord(exampleOne)
-
-// console.log(`Самое длиное слово - `)
-// let maxItem = exampleArray[i].length
-//
+findLongestWord(exampleTwo)
+findLongestWord(exampleThree)
