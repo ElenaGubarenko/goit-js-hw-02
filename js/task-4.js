@@ -8,15 +8,15 @@ const stringFour = "Nunc sed turpis. Curabitur a felis in nunc fringilla tristiq
 const formatString = function (string) {
   for (let i = 0; i <= string.length; i += 1) {
     if (string.length <= 40) {
-      console.log(string)
+      return string
     } else {
       const shortString = string.slice(0, 40)
-      console.log(`${shortString}...`)
+      return `${shortString}...`
     }
   }
 }
 
-formatString(stringOne)
-formatString(stringTwo)
-formatString(stringThree)
-formatString(stringFour)
+console.log(formatString(stringOne))
+console.log(formatString(stringTwo))
+console.log(formatString(stringThree))
+console.log(formatString(stringFour))
